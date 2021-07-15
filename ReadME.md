@@ -117,7 +117,7 @@ def mGauss_hermite(n, mu, sigma, prune=None):
         w = w[inds]
     eigval, eigvec = np.linalg.eig(sigma)
     rot = np.dot(eigvec, np.diag(np.sqrt(eigval)))
-    x = np.dot(rot,(x+mean).transpose()).transpose()
+    x = np.dot(rot,(x+mu).transpose()).transpose()
     return x, w
 ```
 
